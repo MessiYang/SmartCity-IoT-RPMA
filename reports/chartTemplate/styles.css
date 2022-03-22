@@ -1,0 +1,96 @@
+html {
+    font-family: sans-serif;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+html {
+    /*font-size: 10px;*/
+    /*-webkit-tap-highlight-color: rgba(0,0,0,0);*/
+}
+body {
+    font-style: normal;
+    font-variant-ligatures: normal;
+    font-variant-caps: normal;
+    font-variant-numeric: normal;
+    font-weight: normal;
+    font-stretch: normal;
+    font-size: 30px;
+    line-height: normal;
+    font-family: "Microsoft JhengHei", Helvetica, Arial, sans-serif;
+    margin: 0;
+    width:100%;
+}
+.border{
+    border-style: double;
+}
+.subtitle{
+  opacity: 0.6;
+  background: #F5F5F5;
+
+}
+.date{
+    text-align: right;
+    padding-top: 30px;
+}
+.sign{
+    text-align: right;
+}
+canvas{
+    margin: auto;
+}
+.pieCanvas{
+    /*width: 30%;*/
+    /*height: 50%;*/
+    height: 330px;
+}
+.lineCanvas {
+  /*margin-top: 50px;*/
+    /*width: 50%;*/
+    height: 330px;
+}
+#subtitle-showchart{
+    color: #03B4B6;
+    letter-spacing: 1px;
+}
+.bg-color {
+  background-image: linear-gradient(-180deg, rgba(240,240,240,0.50) 0%, rgba(255,255,255,0.00) 100%);
+}
+.header-title {
+  padding-left: 50px;
+  background-image: linear-gradient(-135deg, #36D5F1 0%, #10DDA9 100%);
+}
+.content {
+  background: #FFFFFF;
+  box-shadow: 0 0 4px 0 rgba(0,0,0,0.20);
+  border-radius: 12px;
+  margin: 30px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+.intro {
+  padding-top: 10px;
+  padding-down: 10px;
+  padding-left: 50px;
+  padding-right: : 50px;
+}
+
+.container {
+  padding-left:50px;
+  padding-right: 50px;
+}
+.test{
+    border-style:double;
+}
+.signature{
+    margin-top: 350px;
+}
+.adviserSign{
+    text-decoration: underline;
+}
+.message{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.exam-table{
+    font-size: 30px;
+}

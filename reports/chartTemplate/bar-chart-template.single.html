@@ -1,0 +1,602 @@
+<html>
+<head>
+    <title>停車統計圖</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <style type="text/css">{{{rawString bootstrapCss}}}</style>
+    <!--<link href="bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
+    <!--<link rel="stylesheet" type="text/css" href="styles.css">-->
+    <!--<script src="Chart.js"></script>-->
+
+    <style type="text/css">{{{rawString styleCSS}}}</style>
+    <script>{{{rawString chartJs}}}</script>
+    <!-- <script src="https://use.fontawesome.com/721d61759c.js"></script> -->
+    <script>
+        // 個別車位次數統計
+        var lineConfig_totalTimes = {
+            type: 'bar',
+            data: {
+                labels: [{{{rawString parkingCountByNodeIdLabels}}}],
+                datasets: [
+                    {
+                        label: '次數',
+                        fill: false,
+                        lineTension: 0.1,
+                        backgroundColor: '#b4b4b4',
+                        borderColor: '#b4b4b4',
+                        borderCapStyle: 'butt',
+                        borderDash: [],
+                        borderDashOffset: 0.0,
+                        borderJoinStyle: 'miter',
+                        pointBorderColor: '#b4b4b4',
+                        pointBackgroundColor: '#fff',
+                        pointBorderWidth: 3,
+                        pointHoverRadius: 12,
+                        pointHoverBackgroundColor: '#3fd4b3',
+                        pointHoverBorderColor: '#c4fff2',
+                        pointHoverBorderWidth: 3,
+                        pointRadius: 7,
+                        pointHitRadius: 10,
+                        data: [{{{rawString parkingCountByNodeIdData}}}],
+                    },
+                ]
+            },
+
+            options: {
+                responsive: false,
+                legend: {
+                    display: false
+                },
+                scales: {
+                    xAxes: [
+                        {
+                            display: true,
+                            gridLines: {
+                                display: true,
+                                color: '#b4b4b4',
+                                lineWidth: 2,
+                            },
+                            labels: {
+                                show: true
+                            },
+                            ticks: {
+                                fontSize: 16,
+                                maxRotation: 90,
+                            },
+                            scaleLabel: {
+                                display: true,
+                                labelString: '車位'
+                            }
+                        }
+                    ],
+                    yAxes: [
+                        {
+                            type: 'linear',
+                            display: true,
+                            gridLines: {
+                                display: false,
+                                color: '#b4b4b4',
+                                lineWidth: 2,
+                            },
+                            position: 'left',
+                            id: 'y-axis-1',
+                            labels: {
+                                show: false
+                            },
+                            ticks: {
+                                fontSize: 16,
+                                maxTicksLimit: 5,
+                                beginAtZero: true
+                            },
+                            scaleLabel: {
+                                display: true,
+                                labelString: '次數'
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+
+        // 個別車位時數統計
+        var lineConfig_totalPeriods = {
+            type: 'bar',
+            data: {
+                labels: [{{{rawString parkingTimeByNodeIdLabels}}}],
+                datasets: [
+                    {
+                        label: '時數',
+                        fill: false,
+                        lineTension: 0.1,
+                        backgroundColor: '#b4b4b4',
+                        borderColor: '#b4b4b4',
+                        borderCapStyle: 'butt',
+                        borderDash: [],
+                        borderDashOffset: 0.0,
+                        borderJoinStyle: 'miter',
+                        pointBorderColor: '#b4b4b4',
+                        pointBackgroundColor: '#fff',
+                        pointBorderWidth: 3,
+                        pointHoverRadius: 12,
+                        pointHoverBackgroundColor: '#3fd4b3',
+                        pointHoverBorderColor: '#c4fff2',
+                        pointHoverBorderWidth: 3,
+                        pointRadius: 7,
+                        pointHitRadius: 10,
+                        data: [{{{rawString parkingTimeByNodeIdData}}}],
+                    },
+                ]
+            },
+
+            options: {
+                responsive: false,
+                legend: {
+                    display: false
+                },
+                scales: {
+                    xAxes: [
+                        {
+                            display: true,
+                            gridLines: {
+                                display: true,
+                                color: '#b4b4b4',
+                                lineWidth: 2,
+                            },
+                            labels: {
+                                show: true
+                            },
+                            ticks: {
+                                fontSize: 16,
+                                maxRotation: 90,
+                            },
+                            scaleLabel: {
+                                display: true,
+                                labelString: '車位'
+                            }
+                        }
+                    ],
+                    yAxes: [
+                        {
+                            type: 'linear',
+                            display: true,
+                            gridLines: {
+                                display: false,
+                                color: '#b4b4b4',
+                                lineWidth: 2,
+                            },
+                            position: 'left',
+                            id: 'y-axis-1',
+                            labels: {
+                                show: false
+                            },
+                            ticks: {
+                                fontSize: 16,
+                                maxTicksLimit: 5,
+                                beginAtZero: true
+                            },
+                            scaleLabel: {
+                                display: true,
+                                labelString: '時數'
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+
+        // 周間各日平均停車次數
+        var lineConfig_weekParkingTimes = {
+            type: 'bar',
+            data: {
+                labels: [{{{rawString parkingCountByDayOfWeekLabels}}}],
+                datasets: [
+                    {
+                        label: '平均次數',
+                        fill: false,
+                        lineTension: 0.1,
+                        backgroundColor: '#b4b4b4',
+                        borderColor: '#b4b4b4',
+                        borderCapStyle: 'butt',
+                        borderDash: [],
+                        borderDashOffset: 0.0,
+                        borderJoinStyle: 'miter',
+                        pointBorderColor: '#b4b4b4',
+                        pointBackgroundColor: '#fff',
+                        pointBorderWidth: 3,
+                        pointHoverRadius: 12,
+                        pointHoverBackgroundColor: '#3fd4b3',
+                        pointHoverBorderColor: '#c4fff2',
+                        pointHoverBorderWidth: 3,
+                        pointRadius: 7,
+                        pointHitRadius: 10,
+                        data: [{{{rawString parkingCountByDayOfWeekData}}}],
+                    },
+                ]
+            },
+
+            options: {
+                responsive: false,
+                legend: {
+                    display: false
+                },
+                scales: {
+                    xAxes: [
+                        {
+                            display: true,
+                            gridLines: {
+                                display: true,
+                                color: '#b4b4b4',
+                                lineWidth: 2,
+                            },
+                            labels: {
+                                show: true
+                            },
+                            ticks: {
+                                fontSize: 16,
+                                maxRotation: 0
+                            },
+                            scaleLabel: {
+                                display: true,
+                                labelString: '時間(日)'
+                            }
+                        }
+                    ],
+                    yAxes: [
+                        {
+                            type: 'linear',
+                            display: true,
+                            gridLines: {
+                                display: false,
+                                color: '#b4b4b4',
+                                lineWidth: 2,
+                            },
+                            position: 'left',
+                            id: 'y-axis-1',
+                            labels: {
+                                show: false
+                            },
+                            ticks: {
+                                fontSize: 16,
+                                maxTicksLimit: 5,
+                                beginAtZero: true
+                            },
+                            scaleLabel: {
+                                display: true,
+                                labelString: '平均次數'
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+        // 周間各日平均停車時數
+        var lineConfig_weekParkingPeriods = {
+            type: 'bar',
+            data: {
+                labels: [{{{rawString parkingTimeByDayOfWeekLabels}}}],
+                datasets: [
+                    {
+                        label: '平均時數',
+                        fill: false,
+                        lineTension: 0.1,
+                        backgroundColor: '#b4b4b4',
+                        borderColor: '#b4b4b4',
+                        borderCapStyle: 'butt',
+                        borderDash: [],
+                        borderDashOffset: 0.0,
+                        borderJoinStyle: 'miter',
+                        pointBorderColor: '#b4b4b4',
+                        pointBackgroundColor: '#fff',
+                        pointBorderWidth: 3,
+                        pointHoverRadius: 12,
+                        pointHoverBackgroundColor: '#3fd4b3',
+                        pointHoverBorderColor: '#c4fff2',
+                        pointHoverBorderWidth: 3,
+                        pointRadius: 7,
+                        pointHitRadius: 10,
+                        data: [{{{rawString parkingTimeByDayOfWeekData}}}],
+                    },
+                ]
+            },
+
+            options: {
+                responsive: false,
+                legend: {
+                    display: false
+                },
+                scales: {
+                    xAxes: [
+                        {
+                            display: true,
+                            gridLines: {
+                                display: true,
+                                color: '#b4b4b4',
+                                lineWidth: 2,
+                            },
+                            labels: {
+                                show: true
+                            },
+                            ticks: {
+                                fontSize: 16,
+                                maxRotation: 0
+                            },
+                            scaleLabel: {
+                                display: true,
+                                labelString: '時間(日)'
+                            }
+                        }
+                    ],
+                    yAxes: [
+                        {
+                            type: 'linear',
+                            display: true,
+                            gridLines: {
+                                display: false,
+                                color: '#b4b4b4',
+                                lineWidth: 2,
+                            },
+                            position: 'left',
+                            id: 'y-axis-1',
+                            labels: {
+                                show: false
+                            },
+                            ticks: {
+                                fontSize: 16,
+                                maxTicksLimit: 5,
+                                beginAtZero: true
+                            },
+                            scaleLabel: {
+                                display: true,
+                                labelString: '平均時數'
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+
+        // 個別時段停車次數
+        var lineConfig_hourParkingTimes = {
+            type: 'bar',
+            data: {
+                labels: [{{{rawString parkingCountByHourLabels}}}],
+                datasets: [
+                    {
+                        label: '次數',
+                        fill: false,
+                        lineTension: 0.1,
+                        backgroundColor: '#b4b4b4',
+                        borderColor: '#b4b4b4',
+                        borderCapStyle: 'butt',
+                        borderDash: [],
+                        borderDashOffset: 0.0,
+                        borderJoinStyle: 'miter',
+                        pointBorderColor: '#b4b4b4',
+                        pointBackgroundColor: '#fff',
+                        pointBorderWidth: 3,
+                        pointHoverRadius: 12,
+                        pointHoverBackgroundColor: '#3fd4b3',
+                        pointHoverBorderColor: '#c4fff2',
+                        pointHoverBorderWidth: 3,
+                        pointRadius: 7,
+                        pointHitRadius: 10,
+                        data: [{{{rawString parkingCountByHourData}}}],
+                    },
+                ]
+            },
+
+            options: {
+                responsive: false,
+                legend: {
+                    display: false
+                },
+                scales: {
+                    xAxes: [
+                        {
+                            display: true,
+                            gridLines: {
+                                display: true,
+                                color: '#b4b4b4',
+                                lineWidth: 2,
+                            },
+                            labels: {
+                                show: true
+                            },
+                            ticks: {
+                                fontSize: 16,
+                                maxRotation: 0
+                            },
+                            scaleLabel: {
+                                display: true,
+                                labelString: '時間(時)'
+                            }
+                        }
+                    ],
+                    yAxes: [
+                        {
+                            type: 'linear',
+                            display: true,
+                            gridLines: {
+                                display: false,
+                                color: '#b4b4b4',
+                                lineWidth: 2,
+                            },
+                            position: 'left',
+                            id: 'y-axis-1',
+                            labels: {
+                                show: false
+                            },
+                            ticks: {
+                                fontSize: 16,
+                                maxTicksLimit: 5,
+                                beginAtZero: true
+                            },
+                            scaleLabel: {
+                                display: true,
+                                labelString: '次數'
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+        // 個別時段停車時數
+        var lineConfig_hourParkingPeriods = {
+            type: 'bar',
+            data: {
+                labels: [{{{rawString parkingTimeByHourLabels}}}],
+                datasets: [
+                    {
+                        label: '時數',
+                        fill: false,
+                        lineTension: 0.1,
+                        backgroundColor: '#b4b4b4',
+                        borderColor: '#b4b4b4',
+                        borderCapStyle: 'butt',
+                        borderDash: [],
+                        borderDashOffset: 0.0,
+                        borderJoinStyle: 'miter',
+                        pointBorderColor: '#b4b4b4',
+                        pointBackgroundColor: '#fff',
+                        pointBorderWidth: 3,
+                        pointHoverRadius: 12,
+                        pointHoverBackgroundColor: '#3fd4b3',
+                        pointHoverBorderColor: '#c4fff2',
+                        pointHoverBorderWidth: 3,
+                        pointRadius: 7,
+                        pointHitRadius: 10,
+                        data: [{{{rawString parkingTimeByHourData}}}],
+                    },
+                ]
+            },
+
+            options: {
+                responsive: false,
+                legend: {
+                    display: false
+                },
+                scales: {
+                    xAxes: [
+                        {
+                            display: true,
+                            gridLines: {
+                                display: true,
+                                color: '#b4b4b4',
+                                lineWidth: 2,
+                            },
+                            labels: {
+                                show: true
+                            },
+                            ticks: {
+                                fontSize: 16,
+                                maxRotation: 0
+                            },
+                            scaleLabel: {
+                                display: true,
+                                labelString: '時間(時)'
+                            }
+                        }
+                    ],
+                    yAxes: [
+                        {
+                            type: 'linear',
+                            display: true,
+                            gridLines: {
+                                display: false,
+                                color: '#b4b4b4',
+                                lineWidth: 2,
+                            },
+                            position: 'left',
+                            id: 'y-axis-1',
+                            labels: {
+                                show: false
+                            },
+                            ticks: {
+                                fontSize: 16,
+                                maxTicksLimit: 5,
+                                beginAtZero: true
+                            },
+                            scaleLabel: {
+                                display: true,
+                                labelString: '時數'
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+
+        var drawLineChart = function (type, chartData) {
+            var ctx = document.getElementById(type).getContext('2d');
+            var myChart = new Chart(ctx, chartData);
+        };
+    </script>
+</head>
+
+<body>
+<div class="container bg-color">
+  <div class="row header-title">
+      <div class="col-xs-6">
+          <h1>{{{nodeName}}}車位停車統計圖</h1>
+      </div>
+      <div class="col-xs-6 date">
+          <h4>{{{startDate}}} 至 {{{endDate}}}</h4>
+      </div>
+  </div>
+  <div class="content">
+      <!-- <div class="row">
+          <div class="col-xs-12">
+              <h3 id="subtitle-showchart"><strong>個別車位停車統計</strong></h3>
+          </div>
+      </div> -->
+      <!-- <div class="row">
+          <div class="col-xs-12"> -->
+              <!-- <canvas id="canvas-1"  class="lineCanvas"></canvas> -->
+              <!-- <script>drawLineChart("canvas-1", lineConfig_totalTimes);</script> -->
+              <!--&lt;!&ndash;line  chart&ndash;&gt;-->
+          <!-- </div>
+          <div class="col-xs-12"> -->
+              <!-- <canvas id="canvas-2"  class="lineCanvas"></canvas> -->
+              <!-- <script>drawLineChart("canvas-2", lineConfig_totalPeriods);</script> -->
+              <!--&lt;!&ndash;line  chart&ndash;&gt;-->
+          <!-- </div>
+      </div> -->
+      <div class="row">
+          <div class="col-xs-12">
+              <h3 id="subtitle-showchart"><strong>周間各日停車統計</strong></h3>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-xs-6">
+              <canvas id="canvas-3"  class="lineCanvas"></canvas>
+              <script>drawLineChart("canvas-3", lineConfig_weekParkingTimes);</script>
+              <!--&lt;!&ndash;line  chart&ndash;&gt;-->
+          </div>
+          <div class="col-xs-6">
+              <canvas id="canvas-4"  class="lineCanvas"></canvas>
+              <script>drawLineChart("canvas-4", lineConfig_weekParkingPeriods);</script>
+              <!--&lt;!&ndash;line  chart&ndash;&gt;-->
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-xs-12">
+              <h3 id="subtitle-showchart"><strong>個別時段停車統計</strong></h3>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-xs-6">
+              <canvas id="canvas-5"  class="lineCanvas"></canvas>
+              <script>drawLineChart("canvas-5", lineConfig_hourParkingTimes);</script>
+              <!--&lt;!&ndash;line  chart&ndash;&gt;-->
+          </div>
+          <div class="col-xs-6">
+              <canvas id="canvas-6"  class="lineCanvas"></canvas>
+              <script>drawLineChart("canvas-6", lineConfig_hourParkingPeriods);</script>
+              <!--&lt;!&ndash;line  chart&ndash;&gt;-->
+          </div>
+      </div>
+  </div>
+</div>
+<!-- <script>{{{rawString jqueryJs}}}</script> -->
+<!-- <script>{{{rawString bootstrapJs}}}</script> -->
+</body>
+</html>
