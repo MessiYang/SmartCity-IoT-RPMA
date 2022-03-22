@@ -1,0 +1,26 @@
+[
+  {
+    "nodeId": "0x000c016c",
+    "name": "c016c",
+    "desc": "compal smart light",
+    "deviceType" : "3",
+    "longitude": 116.442519,
+    "latitude": 39.945597
+  },
+  {
+    "nodeId": "0x000c01c4",
+    "name": "c01c4",
+    "desc": "compal smart light",
+    "deviceType" : "3",
+    "longitude": 116.442419,
+    "latitude": 39.945597
+  },
+  {
+    "nodeId": "0x000c025b",
+    "name": "c025b",
+    "desc": "compal smart light",
+    "deviceType" : "3",
+    "longitude": 116.442219,
+    "latitude": 39.945597
+  }
+]

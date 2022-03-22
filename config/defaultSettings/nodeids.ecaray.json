@@ -1,0 +1,155 @@
+[
+  {
+    "nodeId": "0x000c02d2",
+    "name": "c02d2",
+    "desc": "",
+    "deviceType" : "1",
+    "longitude": 113.1924247,
+    "latitude": 22.4311790
+  },
+  {
+    "nodeId": "0x000c0150",
+    "name": "c0150",
+    "desc": "",
+    "deviceType" : "1",
+    "longitude": 113.1921478,
+    "latitude": 22.4311195
+  },
+  {
+    "nodeId": "0x000c011a",
+    "name": "c011a",
+    "desc": "",
+    "deviceType" : "1",
+    "longitude": 113.1923094,
+    "latitude": 22.4311433
+  },
+  {
+    "nodeId": "0x000c01b0",
+    "name": "c01b0",
+    "desc": "",
+    "deviceType" : "1",
+    "longitude": 113.1921292,
+    "latitude": 22.4310425
+  },
+  {
+    "nodeId": "0x000c0148",
+    "name": "c0148",
+    "desc": "",
+    "deviceType" : "1",
+    "longitude": 113.1921721,
+    "latitude": 22.4311323
+  },
+  {
+    "nodeId": "0x000c028f",
+    "name": "c028f",
+    "desc": "",
+    "deviceType" : "1",
+    "longitude": 113.1923734,
+    "latitude": 22.4311291
+  },
+  {
+    "nodeId": "0x000c0142",
+    "name": "c0142",
+    "desc": "",
+    "deviceType" : "1",
+    "longitude": 0,
+    "latitude": 0
+  },
+  {
+    "nodeId": "0x000c02ba",
+    "name": "c02ba",
+    "desc": "",
+    "deviceType" : "1",
+    "longitude": 0,
+    "latitude": 0
+  },
+  {
+    "nodeId": "0x000c01ab",
+    "name": "c01ab",
+    "desc": "",
+    "deviceType" : "1",
+    "longitude": 113.1923724,
+    "latitude": 22.4311294
+  },
+  {
+    "nodeId": "0x000c01ff",
+    "name": "c01ff",
+    "desc": "",
+    "deviceType" : "1",
+    "longitude": 0,
+    "latitude": 0
+  },
+  {
+    "nodeId": "0x000c0140",
+    "name": "c0140",
+    "desc": "",
+    "deviceType" : "1",
+    "longitude": 113.1921530,
+    "latitude": 22.4311272
+  },
+  {
+    "nodeId": "0x000c0267",
+    "name": "c0267",
+    "desc": "",
+    "deviceType" : "1",
+    "longitude": 113.1920255,
+    "latitude": 22.4310460
+  },
+  {
+    "nodeId": "0x000c02e4",
+    "name": "c02e4",
+    "desc": "",
+    "deviceType" : "1",
+    "longitude": 0,
+    "latitude": 0
+  },
+  {
+    "nodeId": "0x000c0170",
+    "name": "c0170",
+    "desc": "",
+    "deviceType" : "1",
+    "longitude": 113.1924503,
+    "latitude": 22.4311767
+  },
+  {
+    "nodeId": "0x000c028e",
+    "name": "c028e",
+    "desc": "",
+    "deviceType" : "1",
+    "longitude": 113.1921768,
+    "latitude": 22.4311289
+  },
+  {
+    "nodeId": "0x000c0151",
+    "name": "c0151",
+    "desc": "",
+    "deviceType" : "1",
+    "longitude": 113.1921435,
+    "latitude": 22.4311027
+  },
+
+  {
+    "nodeId": "0x000c0164",
+    "name": "c0164",
+    "desc": "",
+    "deviceType" : "3",
+    "longitude": 113.1921435,
+    "latitude": 22.4311027
+  },
+  {
+    "nodeId": "0x000c0299",
+    "name": "c0299",
+    "desc": "",
+    "deviceType" : "3",
+    "longitude": 113.1921435,
+    "latitude": 22.4311027
+  },
+  {
+    "nodeId": "0x000c026d",
+    "name": "c026d",
+    "desc": "",
+    "deviceType" : "3",
+    "longitude": 113.1921435,
+    "latitude": 22.4311027
+  }
+]

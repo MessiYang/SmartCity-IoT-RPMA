@@ -1,0 +1,10 @@
+[
+  {
+    "nodeId": "0x000c0860",
+    "name": "Tracker 01",
+    "desc": "Tracker 01 compal demo",
+    "deviceType" : "4",
+    "longitude": 121.577935,
+    "latitude": 25.08305
+  }
+]

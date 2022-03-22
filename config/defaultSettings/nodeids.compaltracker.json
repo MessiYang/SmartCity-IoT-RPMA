@@ -1,0 +1,114 @@
+[
+  {
+    "nodeId": "0x000c03a1",
+    "name": "c03a1 GPStracker",
+    "desc": "compal GPStracker",
+    "deviceType" : "4",
+    "longitude": 118.327377,
+    "latitude": 29.716325
+  },
+  {
+    "nodeId": "0x000c0460",
+    "name": "c0460 GPStracker",
+    "desc": "compal GPStracker",
+    "deviceType" : "4",
+    "longitude": 118.321377,
+    "latitude": 29.711325
+  },
+  {
+    "nodeId": "0x000c0421",
+    "name": "c0421 GPStracker",
+    "desc": "compal GPStracker",
+    "deviceType" : "4",
+    "longitude": 118.323377,
+    "latitude": 29.713325
+  },
+  {
+    "nodeId": "0x000c0435",
+    "name": "c0435 GPStracker",
+    "desc": "compal GPStracker",
+    "deviceType" : "4",
+    "longitude": 118.325377,
+    "latitude": 29.712325
+  },
+  {
+    "nodeId": "0x000c0479",
+    "name": "c0479 GPStracker",
+    "desc": "compal GPStracker",
+    "deviceType" : "4",
+    "longitude": 118.329377,
+    "latitude": 29.719325
+  },
+  {
+    "nodeId": "0x000c0417",
+    "name": "c0417 GPStracker",
+    "desc": "compal GPStracker",
+    "deviceType" : "4",
+    "longitude": 118.321377,
+    "latitude": 29.711325
+  },
+  {
+    "nodeId": "0x000c0419",
+    "name": "c0419 GPStracker",
+    "desc": "compal GPStracker",
+    "deviceType" : "4",
+    "longitude": 118.323377,
+    "latitude": 29.713325
+  },
+  {
+    "nodeId": "0x000c0453",
+    "name": "c0453 GPStracker",
+    "desc": "compal GPStracker",
+    "deviceType" : "4",
+    "longitude": 118.325377,
+    "latitude": 29.712325
+  },
+  {
+    "nodeId": "0x000c0427",
+    "name": "c0427 GPStracker",
+    "desc": "compal GPStracker",
+    "deviceType" : "4",
+    "longitude": 118.329377,
+    "latitude": 29.719325
+  },
+  {
+    "nodeId": "0x000c0215",
+    "name": "c0215 GPStracker",
+    "desc": "compal GPStracker",
+    "deviceType" : "4",
+    "longitude": 118.329377,
+    "latitude": 29.719325
+  },
+  {
+    "nodeId": "0x000c0428",
+    "name": "c0428 GPStracker",
+    "desc": "compal GPStracker",
+    "deviceType" : "4",
+    "longitude": 118.323377,
+    "latitude": 29.713325
+  },
+  {
+    "nodeId": "0x000c0413",
+    "name": "c0413 GPStracker",
+    "desc": "compal GPStracker",
+    "deviceType" : "4",
+    "longitude": 118.325377,
+    "latitude": 29.712325
+  },
+  {
+    "nodeId": "0x000c043f",
+    "name": "c043f GPStracker",
+    "desc": "compal GPStracker",
+    "deviceType" : "4",
+    "longitude": 118.329377,
+    "latitude": 29.719325
+  },
+  {
+    "nodeId": "0x000c0437",
+    "name": "c0437 GPStracker",
+    "desc": "compal GPStracker",
+    "deviceType" : "4",
+    "longitude": 118.329377,
+    "latitude": 29.719325
+  }
+]

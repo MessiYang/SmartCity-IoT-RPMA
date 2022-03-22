@@ -1,0 +1,18 @@
+[
+  {
+    "nodeId": "0x000c0112",
+    "name": "c0112",
+    "desc": "compal parking sensor",
+    "deviceType" : "1",
+    "longitude": 121.577857,
+    "latitude": 25.083086
+  },
+  {
+    "nodeId": "0x000801e8",
+    "name": "801e8",
+    "desc": "compal parking sensor",
+    "deviceType" : "1",
+    "longitude": 121.577579,
+    "latitude": 25.083217
+  }
+]
